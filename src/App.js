@@ -40,16 +40,16 @@ function App() {
   };
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   useEffect(() => {
     const hasGift = cart.find((item) => item.id === FREE_GIFT.id);
-    
+  
     if (total >= THRESHOLD && !hasGift) {
       setCart((prev) => sortCartItems([...prev, { ...FREE_GIFT, quantity: 1 }]));
     } else if (total < THRESHOLD && hasGift) {
       setCart((prev) => prev.filter((item) => item.id !== FREE_GIFT.id));
     }
-  }, [cart,total]);
+  }, [cart, total]);
+  
 
   return (
     <>
