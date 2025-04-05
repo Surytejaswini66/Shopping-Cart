@@ -49,7 +49,7 @@ function App() {
     } else if (total < THRESHOLD && hasGift) {
       setCart((prev) => prev.filter((item) => item.id !== FREE_GIFT.id));
     }
-  }, [total]);
+  }, [cart,total]);
 
   return (
     <>
