@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# 🛒 Shopping Cart Application with Free Gift Logic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React app to add products to a cart, manage quantities, and unlock a free gift when subtotal crosses ₹1000.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📽 Deliverable
 
-### `npm start`
+- ✅ Screen recording of the full development process (from reading the assignment to completing the code).
+- 📤 Upload the screen recording to Google Drive.
+- 🔗 Insert the link below once uploaded:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Google Drive Link:** [Insert your link here]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ✅ Display Products
 
-### `npm run build`
+- Renders products from `PRODUCTS` constant.
+- Each product includes:
+  - Name and price.
+  - `+` / `-` quantity buttons.
+  - "Add to Cart" button.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🛍 Shopping Cart
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Cart appears below product list.
+- Users can:
+  - Update quantity of existing products.
+  - Remove items from cart.
+- Subtotal and total update dynamically.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🎁 Free Gift Logic
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Free gift (`Wireless Mouse`) auto-added when subtotal ≥ ₹1000.
+- Gift shows in cart with:
+  - A message: "Congrats! You've unlocked a Free Gift."
+  - Progress bar indicating how close to threshold.
+- Only **one gift** added.
+- Gift **cannot** be manually removed.
+- Gift is removed if subtotal drops below ₹1000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🔧 State Management
 
-## Learn More
+- Uses React’s `useState` and `useEffect`.
+- Tracks:
+  - Product quantities
+  - Cart items
+  - Subtotal
+  - Progress toward gift
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 💅 Styling
 
-### Code Splitting
+- Styled using `styled-components`.
+- Clean, responsive UI.
+- Progress bar and gift addition provide visual feedback.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🛠 Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 1. Clone the Repository
 
-### Making a Progressive Web App
+bash
+git clone https://github.com/your-username/shopping-cart-gift-app.git
+cd shopping-cart-gift-app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 2. Install Dependencies
 
-### Advanced Configuration
+bash
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 3. Run the Application
 
-### Deployment
+bash
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+App will run locally at: http://localhost:3000
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📂 Provided Data
+
+js
+const PRODUCTS = [
+{ id: 1, name: "Laptop", price: 500 },
+{ id: 2, name: "Smartphone", price: 300 },
+{ id: 3, name: "Headphones", price: 100 },
+{ id: 4, name: "Smartwatch", price: 150 },
+];
+
+const FREE_GIFT = { id: 99, name: "Wireless Mouse", price: 0 };
+const THRESHOLD = 1000;
+
+---
+
+## 📸 UI States
+
+### ➖ Empty Cart
+
+- Text: `"Your cart is currently empty."`
+
+### ➕ After Adding Products
+
+- Quantity, price, and total visible per product.
+- Subtotal updates dynamically.
+- Progress bar appears.
+
+### 🎉 Free Gift Added
+
+- Gift item shown automatically.
+- Message: `"Congrats! You've unlocked a Free Gift."`
+- If subtotal drops below ₹1000, gift is removed automatically.
+
+---
+
+## 📝 Submission Instructions
+
+- Submit the Google Drive video link in the following form:  
+  🔗 [https://forms.ccbp.in/ecloto_design_assignement_submission](https://forms.ccbp.in/ecloto_design_assignement_submission)
+
+---
+
+**Good luck and happy coding! 🚀**
